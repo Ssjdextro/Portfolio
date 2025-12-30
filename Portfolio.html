@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* ================= BACKGROUND VIDEO ================= */
+#bg-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* ================= TYPO HEADER ================= */
+#typer {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(153, 101, 38);
+    font-size: clamp(8rem, 9vw, 5rem);
+    text-align: center;
+    animation: fadeExpand 12s ease forwards;
+    margin-top: 40px;
+}
+
+@keyframes fadeExpand {
+    0% {
+        opacity: 0;
+        letter-spacing: -5px;
+    }
+    100% {
+        opacity: 1;
+        letter-spacing: 2px;
+    }
+}
+
+/* ================= FLEX CENTER ================= */
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= NAV BAR ================= */
+.navcontent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeExpand 8s ease forwards;
+    max-width: 90%;
+    padding: 12px 20px;
+    border: 2px solid white;
+    border-radius: 30px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.navcontent a {
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.navcontent a:hover {
+    color: white;
+    text-shadow: 0 0 10px white, 0 0 20px #323636;
+}
+
+/* ================= ICON BAR ================= */
+#iconsbar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    animation: fadeExpand 12s ease forwards;
+    width: 100%;
+    max-width: 500px;
+    margin: 60px auto;
+}
+
+.icons {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= CONTENT BOX ================= */
+.contentbox,
+.contentboxdown {
+    max-width: 90%;
+    width: 100%;
+    padding: 30px;
+    border: 2px solid rgb(167, 160, 160);
+    border-radius: 40px;
+    background-color: transparent;
+    margin-top: 40px;
+}
+
+/* ================= FONT COLOR ================= */
+.fontcolor {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ================= PROJECT BUTTON ================= */
+.redirect {
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.redirect a {
+    color: #f2f4f8;
+    text-decoration: none;
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
+@media (max-width: 768px) {
+
+    #iconsbar {
+        gap: 20px;
+    }
+
+    .navcontent {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .contentbox,
+    .contentboxdown {
+        padding: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <video autoplay reverse muted id="bg-video">
+        <source src="/media/Orange Black Modern Welcome To My Channel Video.mp4">
+    </video>
+    <!-- Header -->
+<div id="typer">
+    <h2>GOWTHAM R</h2>
+    <h6 style="margin-top: 0; padding-top: 0;">FULL STACK DEVELOPER</h6>
+</div>
+
+<!-- Navigation -->
+<div class="flex">
+    <div class="navcontent">
+        <a href="#Intro" style="color: bisque;">Intro</a>
+        <a href="#Aboutme" style="color: bisque;">About Me</a>
+        <a href="#Education" style="color: bisque;">Education</a>
+        <a href="#Projects" style="color: bisque;">Projects</a>
+        <a href="#achievements" style="color: bisque;">Achievements / Certifications</a>
+        <a href="#Contact" style="color: bisque;">Contact</a>
+    </div>
+</div>
+
+<!-- Social Icons -->
+<div class="flex">
+    <div id="iconsbar">
+        <a href="https://www.linkedin.com/in/gowtham-r-695280241" target="_blank">
+            <div class="icons">
+                <i class="fa-brands fa-square-linkedin fa-bounce" style="color: #f7f7f8;"></i>
+            </div>
+        </a>
+
+        <a href="mailto:gowthamsugi8@gmail.com?subject=Hiring%20Process%20Related">
+            <div class="icons">
+                <i class="fa-solid fa-envelope fa-bounce" style="color: #ffffff;"></i>
+            </div>
+        </a>
+
+        <a href="https://github.com/gowthamsugi7-web/Portfolio" target="_blank">
+            <div class="icons">
+                <i class="fa-brands fa-github fa-bounce" style="color: #ffffff;"></i>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- resume -->
+<div class="flex">
+<div class="redirect">
+                    <a href="/R Gowtham Resume (1).pdf" target="_blank">
+                        <i class="fa-solid fa-download fa-shake" style="color: #fcfcfd;"></i>
+                        Resume</a>
+                </div>
+</div>
+
+<!-- contact -->
+<section id="Contact"><div class="flex">
+<div style="border: 1px solid rgb(68, 67, 66); border-radius: 50px; max-width: 90%; margin-top: 15px;
+    width: 100%;">
+<div class="fontcolor">
+<h5>Contact - +91 7604969185 <br>
+Gmail- gowthamsugi8@gmail.com
+</h5>
+</div>
+</div>
+</div></section>
+
+<!-- Intro -->
+<section id="Intro">
+    <div class="flex">
+        <div class="contentbox" style="animation: fadeExpand 6s ease forwards;">
+            <div class="fontcolor">
+                <h1 style="text-align: center;">INTRO</h1>
+                <h3>Hi, I’m Gowtham</h3>
+
+                I am a front-end developer passionate about crafting clean, responsive, and interactive web experiences.
+                <br><br>
+                I design and build modern websites that blend minimalism with bold interactivity.
+                <br><br>
+                Turning ideas into sleek, animated interfaces that speak louder than words.
+                <br><br>
+
+                <h2 style="text-align: center; color: antiquewhite;">
+                    Code. Design. Animate. <br>
+                    Building experiences, not just websites.
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Me -->
+<section id="Aboutme">
+    <div class="flex">
+        <div class="contentboxdown" style="animation: fadeExpand 9s ease forwards;">
+            <div class="fontcolor">
+                <h1 style="text-align: center;">About Me 🙋🏻</h1>
+
+                I am a person who loves consistency when I am passionate about something. That’s how I know I truly love my work as a developer.
+                <br><br>
+                My focus ranges from minute design details to building responsive websites—just like a *Mimosa pudica*.
+                <br><br>
+                In my early days, I was a nerdy kid who focused deeply on academics, which helped me achieve strong grades.
+                <br><br>
+                I thrive on building new things—especially projects that challenge me and give me chills.
+                <br><br>
+                I am eager to apply my knowledge to real-world projects and grow as a professional in the tech industry.
+                <br><br>
+
+                <h2 style="text-align: center; color: antiquewhite;">
+                    Passionate · Consistent · Clever
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education -->
+<section id="Education">
+    <div class="flex">
+        <div class="contentboxdown" style="animation: fadeExpand 14s ease forwards;">
+            <div class="fontcolor">
+                <h1 style="text-align: center;">🎓 Education</h1>
+
+                Bachelor of Technology  
+                <h3>Artificial Intelligence and Data Science</h3>
+                CGPA: 7.96 (No history of arrears)
+                <br><br>
+
+                HSC (12th) – 89%
+                <br><br>
+
+                SSLC (10th) – 80%
+                <br><br>
+
+                <h2 style="text-align: center; color: antiquewhite;">
+                    Dedication · Manifestation · Perfection
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="Projects">
+    <div class="flex">
+        <div class="contentboxdown" style="animation: fadeExpand 15s ease forwards;">
+            <div class="fontcolor">
+                <h1 style="text-align: center;">Projects</h1>
+
+                <strong>U-Cart (E-Commerce Website)</strong><br>
+                Designed and deployed a fully functional e-commerce website for my entrepreneurship startup.
+                <br><br>
+                Products include customized phone cases, photo frames, keychains, and gifts.
+                <br><br>
+                The website is lightweight and fully responsive to enhance user experience.
+                <br><br>
+                <strong>Features:</strong> Dynamic product listings, easy ordering, and user-friendly UI.
+                <br><br>
+
+                <div class="redirect">
+                    <a href="#" target="_blank">Redirect to Project</a>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- achievements -->
+<section id="achievements">
+    <div class="flex">
+        <div class="contentboxdown" style="animation: fadeExpand 15s ease forwards;">
+            <div class="fontcolor">
+                <h1 style="text-align: center;">Achievements & Certifications</h1>
+
+                <strong>SQL Certification - Udemy </strong><br>
+                Secured certificate from a self paced course on udemy by completing all the tests and assignments
+                <br><br>
+                <strong>Full Stack Development Course</strong>
+                <br><br>
+                Completed Pyhton Full Stack Development Course at Qspiders which gave me strong fundamental understanding of Development tools
+                <br><br>
+                <strong>Tools :</strong> PYTHON | SQL | WEB TECHNOLOGY | DJANGO
+                <br><br>
+                <div class="redirect">
+                    <a href="http://ude.my/UC-00f79a6d-3a5c-4c6e-b81e-7c3875c10ae5" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+
+
+
+
+
+
+
