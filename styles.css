@@ -1,0 +1,1404 @@
+/* FONT FILES
+   Local Satoshi font weights used throughout the site. */
+@font-face {
+  font-family: Satoshi;
+  src: url("assets/fonts/satoshi-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap
+}
+
+/* FONT FILES
+   Local Satoshi font weights used throughout the site. */
+@font-face {
+  font-family: Satoshi;
+  src: url("assets/fonts/satoshi-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap
+}
+
+/* FONT FILES
+   Local Satoshi font weights used throughout the site. */
+@font-face {
+  font-family: Satoshi;
+  src: url("assets/fonts/satoshi-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap
+}
+
+/* FONT FILES
+   Local Satoshi font weights used throughout the site. */
+@font-face {
+  font-family: Satoshi;
+  src: url("assets/fonts/satoshi-900.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap
+}
+
+/* DESIGN TOKENS
+   Shared colors, widths, corners, and animation timing. Change these to adjust the overall look. */
+:root {
+  --paper: #f4f0e9;
+  --surface: #fffdf9;
+  --ink: #161616;
+  --muted: #68635d;
+  --accent: #b98b6e;
+  --line: #ddd4c9;
+  --container: min(90rem,
+calc(100% - clamp(2rem,8vw,8rem)));
+  --radius: 1.5rem;
+  --ease: cubic-bezier(.22,1,
+.36,1)
+}
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Satoshi,
+Arial,
+sans-serif;
+  -webkit-font-smoothing: antialiased
+}
+
+img {
+  max-width: 100%;
+  display: block
+}
+
+a {
+  color: inherit
+}
+
+button {
+  font: inherit
+}
+
+::selection {
+  background: #b98b6e45;
+  color: var(--ink)
+}
+
+.section-wrap {
+  width: var(--container);
+  margin-inline: auto
+}
+
+/* NAVIGATION
+   Fixed top bar and its desktop and mobile menu. */
+.site-header {
+  position: fixed;
+  z-index: 30;
+  inset: 1rem 0 auto;
+  transition: inset .35s var(--ease)
+}
+
+.nav-shell {
+  width: var(--container);
+  min-height: 4.5rem;
+  margin: auto;
+  padding: .65rem 1rem .65rem 1.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--surface);
+  transition: box-shadow .3s,
+border-color .3s,
+background .3s
+}
+
+/* NAVIGATION
+   Fixed top bar and its desktop and mobile menu. */
+.site-header.is-scrolled {
+  inset: .5rem 0 auto
+}
+
+/* NAVIGATION
+   Fixed top bar and its desktop and mobile menu. */
+.site-header.is-scrolled .nav-shell {
+  border-color: #16161612;
+  box-shadow: 0 12px 36px #16161612
+}
+
+.wordmark {
+  text-decoration: none;
+  font-size: .92rem;
+  letter-spacing: .15em;
+  font-weight: 900;
+  white-space: nowrap
+}
+
+.wordmark span {
+  color: var(--accent)
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem,2.5vw,2.5rem)
+}
+
+.desktop-nav a,
+.mobile-menu a {
+  font-size: .94rem;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: .78;
+  transition: opacity .2s,
+color .2s
+}
+
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible,
+.mobile-menu a:hover {
+  opacity: 1;
+  color: #92664c
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: .75rem
+}
+
+.language-toggle {
+  border: 0;
+  background: transparent;
+  min-height: 2.75rem;
+  padding: .5rem .65rem;
+  color: var(--muted);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  cursor: pointer
+}
+
+.language-toggle span {
+  color: var(--accent);
+  padding: 0 .2rem
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: .75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: .96rem;
+  font-weight: 700;
+  transition: transform .25s var(--ease),
+background .25s,
+color .25s,
+border-color .25s
+}
+
+.button:hover {
+  transform: translateY(-2px)
+}
+
+.button-dark {
+  background: var(--ink);
+  color: var(--surface)
+}
+
+.button-dark:hover {
+  background: #34312d
+}
+
+.button-accent {
+  background: var(--accent);
+  color: var(--ink)
+}
+
+.button-accent:hover {
+  background: #c79a7b
+}
+
+.button-outline {
+  border-color: #16161636;
+  background: transparent
+}
+
+.button-outline:hover {
+  border-color: var(--ink);
+  background: #fffdf980
+}
+
+.button-light-outline {
+  border-color: #fffdf989;
+  color: var(--surface)
+}
+
+.button-light-outline:hover {
+  background: #fffdf91a
+}
+
+.button-arrow {
+  font-size: 1.12rem;
+  font-weight: 400
+}
+
+.menu-toggle {
+  display: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  padding: .7rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer
+}
+
+.menu-toggle span {
+  display: block;
+  height: 1px;
+  margin: .3rem 0;
+  background: var(--ink);
+  transition: transform .2s
+}
+
+.menu-toggle[aria-expanded=true] span:first-child {
+  transform: translateY(3.5px) rotate(45deg)
+}
+
+.menu-toggle[aria-expanded=true] span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg)
+}
+
+.mobile-menu {
+  position: absolute;
+  top: calc(100% + .5rem);
+  left: 50%;
+  width: var(--container);
+  padding: 1rem;
+  border: 1px solid #16161612;
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: 0 20px 45px #1616161c;
+  transform: translateX(-50%)
+}
+
+.mobile-menu:not([hidden]) {
+  display: grid;
+  gap: .25rem
+}
+
+.mobile-menu a {
+  padding: .8rem .6rem;
+  border-radius: .65rem
+}
+
+.mobile-menu a:hover {
+  background: var(--paper)
+}
+
+/* INTRO / HERO
+   The first section visitors see, including the portrait and focus tags. */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0,1.08fr) minmax(20rem,
+.92fr);
+  align-items: stretch;
+  min-height: clamp(42rem,58vw,57rem);
+  padding: 9rem 0 0;
+  overflow: hidden;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--surface)
+}
+
+.hero-copy {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(2.25rem,5vw,5rem) clamp(1.5rem,5vw,5rem) 1.75rem
+}
+
+.eyebrow,
+.section-kicker,
+.card-label,
+.focus-label,
+.footer-kicker {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  margin: 0;
+  color: #82766b;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1.5
+}
+
+.eyebrow-line {
+  display: block;
+  width: 1.6rem;
+  height: 1px;
+  background: var(--accent)
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0
+}
+
+h1 {
+  max-width: 47rem;
+  margin: .95rem 0 1.5rem;
+  font-size: clamp(3rem,6vw,6.8rem);
+  font-weight: 700;
+  line-height: .94;
+  letter-spacing: -.075em
+}
+
+h1 em {
+  color: var(--accent);
+  font-style: normal
+}
+
+.hero-description {
+  max-width: 39rem;
+  margin: 0;
+  color: #5b5752;
+  font-size: clamp(1.08rem,1.45vw,1.3rem);
+  line-height: 1.58
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 2rem
+}
+
+.focus-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .7rem 1.2rem;
+  margin-top: auto;
+  padding-top: 2.5rem;
+  color: #69645e;
+  font-size: .78rem
+}
+
+.focus-label {
+  font-size: .65rem;
+  opacity: .7
+}
+
+.focus-row>span:not(:first-child) {
+  font-weight: 700;
+  letter-spacing: .02em
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 34rem;
+  margin: 0 1.3rem 1rem 0;
+  overflow: hidden;
+  border-radius: 49% 48% 42% 48% / 18% 22% 60% 62%;
+  background: #e9ddd1
+}
+
+.hero-visual-backdrop {
+  position: absolute;
+  inset: 8% 5% 3%;
+  border-radius: 48% 47% 45% 40%/24% 24% 50% 48%;
+  background: linear-gradient(145deg,
+#e8d6c4,
+#f4ece2)
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+  mix-blend-mode: multiply
+}
+
+.photo-caption {
+  position: absolute;
+  right: 1rem;
+  bottom: 2rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  padding: .75rem 1rem;
+  border: 1px solid #fff9;
+  border-radius: 999px;
+  background: #fffdf9e8;
+  font-size: .76rem;
+  font-weight: 500;
+  box-shadow: 0 10px 30px #16161612
+}
+
+.caption-dot {
+  width: .5rem;
+  height: .5rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent)
+}
+
+/* QUICK IMPACT SUMMARY
+   The dark row of training and skill statistics. */
+.impact-strip {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  width: var(--container);
+  margin: -.5rem auto 0;
+  padding: 2.1rem 1.3rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--ink);
+  color: var(--surface)
+}
+
+.impact-item {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+  padding: .5rem 1rem;
+  text-align: center
+}
+
+.impact-item+ .impact-item {
+  border-left: 1px solid #fff3
+}
+
+.impact-item strong {
+  color: var(--accent);
+  font-size: clamp(1.5rem,3vw,2.7rem);
+  font-weight: 700;
+  letter-spacing: -.06em;
+  line-height: 1.1
+}
+
+.impact-item strong span {
+  color: var(--surface)
+}
+
+.impact-item>span {
+  font-size: .86rem;
+  color: #fffdf9c7
+}
+
+/* TRAINING TOPICS
+   Intro copy and cards describing the subjects taught. */
+.training {
+  padding-top: clamp(5rem,9vw,8.5rem);
+  padding-bottom: clamp(5rem,8vw,7rem)
+}
+
+.section-intro {
+  display: grid;
+  grid-template-columns: 1fr .78fr;
+  align-items: end;
+  gap: 3rem
+}
+
+.section-kicker {
+  margin-bottom: 1.1rem;
+  color: #a07a60
+}
+
+.section-intro h2,
+/* ABOUT SECTION
+   Trainer portrait, biography, and skills list. */
+.about h2 {
+  max-width: 48rem;
+  margin-bottom: 0;
+  font-size: clamp(2.6rem,5.5vw,5rem);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.07em
+}
+
+.intro-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.1rem;
+  padding-bottom: .2rem
+}
+
+.intro-side p {
+  max-width: 31rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.65
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  text-decoration: none;
+  font-weight: 700
+}
+
+.text-link span:last-child {
+  transition: transform .2s var(--ease)
+}
+
+.text-link:hover span:last-child {
+  transform: translateX(4px)
+}
+
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(2,
+minmax(0,1fr));
+  gap: .9rem;
+  margin-top: 3rem
+}
+
+.training-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto minmax(0,1fr) auto;
+  align-items: start;
+  gap: 1rem;
+  min-height: 13rem;
+  padding: 1.45rem;
+  border: 1px solid #16161612;
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: 0 14px 40px -24px #16161625;
+  transition: transform .3s var(--ease),
+border-color .3s,
+background .3s
+}
+
+.training-card:hover {
+  transform: translateY(-4px);
+  border-color: #b98b6e88;
+  background: #fffdfa
+}
+
+.card-number {
+  padding-top: .35rem;
+  color: #9a9289;
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .08em
+}
+
+.card-icon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid #b98b6e65;
+  border-radius: 50%;
+  color: #91684f;
+  font-size: 1.15rem
+}
+
+.training-card>div {
+  padding: .1rem .4rem 0 .1rem
+}
+
+.card-label {
+  margin-bottom: .6rem;
+  font-size: .62rem;
+  letter-spacing: .12em
+}
+
+.training-card h3 {
+  margin: 0 0 .55rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -.04em
+}
+
+.training-card p:last-child {
+  max-width: 31rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: .93rem;
+  line-height: 1.55
+}
+
+.card-arrow {
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  place-items: center;
+  border: 1px solid #16161622;
+  border-radius: 50%;
+  background: #f7f3ed;
+  color: var(--ink);
+  transition: background .2s,
+transform .2s
+}
+
+.training-card:hover .card-arrow {
+  transform: rotate(45deg);
+  background: var(--accent)
+}
+
+/* ABOUT SECTION
+   Trainer portrait, biography, and skills list. */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  align-items: center;
+  gap: clamp(2rem,6vw,6rem);
+  padding-top: 1.5rem;
+  padding-bottom: clamp(6rem,9vw,9rem)
+}
+
+.about-photo-wrap {
+  position: relative;
+  min-height: clamp(26rem,43vw,42rem);
+  margin: 0;
+  overflow: hidden;
+  border-radius: 2rem;
+  background: #e8d6c4
+}
+
+.about-photo-wrap:before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg,
+transparent 55%,
+#1616169c 100%)
+}
+
+.about-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: 50% 25%
+}
+
+.about-photo-wrap figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  color: #fffdf9
+}
+
+.about-photo-wrap figcaption span:first-child {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .17em
+}
+
+.about-photo-wrap figcaption span:last-child {
+  color: #fffdf9cf;
+  font-size: .88rem
+}
+
+.about-copy {
+  padding: 2rem 0
+}
+
+.about-copy h2 {
+  margin-bottom: 1.4rem
+}
+
+.about-lead {
+  max-width: 38rem;
+  margin: 0;
+  color: #5b5752;
+  font-size: clamp(1.05rem,1.4vw,1.2rem);
+  line-height: 1.65
+}
+
+.about-list {
+  display: grid;
+  gap: .9rem;
+  margin: 1.7rem 0 1.9rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  list-style: none
+}
+
+.about-list li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-weight: 500
+}
+
+.about-list li:before {
+  content: "↗";
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  font-size: .95rem
+}
+
+/* CONTACT FOOTER
+   Closing invitation and contact links. */
+.site-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: var(--container);
+  margin: 0 auto;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--ink) url("assets/footer-mountains.webp") center 48%/cover no-repeat;
+  color: var(--surface)
+}
+
+.footer-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg,
+#161616db,
+#161616a6),
+linear-gradient(0deg,
+#161616bb,
+transparent)
+}
+
+.footer-content {
+  width: min(100% - 3rem,74rem);
+  margin: auto;
+  padding: clamp(4rem,8vw,7rem) 0 1.5rem;
+  text-align: center
+}
+
+.footer-kicker {
+  justify-content: center;
+  margin: 0 auto 1.4rem;
+  color: #d0a98d
+}
+
+.footer-kicker span:first-child,
+.footer-kicker span:last-child {
+  width: 2.25rem;
+  height: 1px;
+  background: #d0a98d88
+}
+
+/* CONTACT FOOTER
+   Closing invitation and contact links. */
+.site-footer h2 {
+  max-width: 68rem;
+  margin: 0 auto;
+  font-size: clamp(2.7rem,7.5vw,6.5rem);
+  font-weight: 700;
+  line-height: .94;
+  letter-spacing: -.075em
+}
+
+/* CONTACT FOOTER
+   Closing invitation and contact links. */
+.site-footer p:not(.footer-kicker) {
+  max-width: 42rem;
+  margin: 1.4rem auto 0;
+  color: #fffdf9d2;
+  font-size: clamp(1rem,1.55vw,1.2rem);
+  line-height: 1.6
+}
+
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .8rem;
+  margin-top: 2rem
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid #fff4;
+  color: #fffdf9b9;
+  font-size: .75rem;
+  text-align: left
+}
+
+.footer-bottom span:last-child {
+  text-align: right
+}
+
+/* TABLET LAYOUT
+   Adjust the two-column sections for medium screens. */
+@media (max-width: 900px) {
+  :root {
+  --container: min(100% - 2rem,58rem)
+}
+
+/* INTRO / HERO
+   The first section visitors see, including the portrait and focus tags. */
+.hero {
+  grid-template-columns: 1fr minmax(17rem,
+.8fr);
+  min-height: 42rem
+}
+
+.hero-copy {
+  padding-left: 2rem;
+  padding-right: 1rem
+}
+
+.hero-visual {
+  min-height: 30rem
+}
+
+.focus-row {
+  gap: .6rem .9rem
+}
+
+.section-intro {
+  grid-template-columns: 1fr .85fr;
+  gap: 2rem
+}
+
+.training-card {
+  grid-template-columns: auto minmax(0,1fr) auto;
+  gap: .75rem;
+  padding: 1.1rem
+}
+
+.card-icon {
+  grid-column: 1;
+  grid-row: 1
+}
+
+.card-number {
+  grid-column: 2;
+  grid-row: 1
+}
+
+.training-card>div {
+  grid-column: 1/3;
+  grid-row: 2
+}
+
+.card-arrow {
+  grid-column: 3;
+  grid-row: 1
+}
+
+
+}
+
+/* PHONE LAYOUT
+   Stack sections and tighten spacing on small screens. */
+@media (max-width: 680px) {
+  :root {
+  --container: calc(100% - 1.25rem)
+}
+
+html {
+  scroll-padding-top: 5.5rem
+}
+
+/* NAVIGATION
+   Fixed top bar and its desktop and mobile menu. */
+.site-header {
+  inset: .5rem 0 auto
+}
+
+.nav-shell {
+  min-height: 3.75rem;
+  padding: .45rem .55rem .45rem 1rem
+}
+
+.desktop-nav,
+.nav-cta {
+  display: none
+}
+
+.menu-toggle {
+  display: block
+}
+
+.nav-actions {
+  gap: .25rem
+}
+
+/* INTRO / HERO
+   The first section visitors see, including the portrait and focus tags. */
+.hero {
+  grid-template-columns: 1fr;
+  min-height: auto;
+  padding-top: 5.5rem;
+  border-radius: 0 0 1rem 1rem
+}
+
+.hero-copy {
+  padding: 2.25rem 1.35rem 0
+}
+
+.eyebrow {
+  font-size: .61rem;
+  letter-spacing: .13em
+}
+
+.eyebrow-line {
+  width: 1rem
+}
+
+h1 {
+  margin: .8rem 0 1rem;
+  font-size: clamp(3rem,12vw,5rem)
+}
+
+.hero-description {
+  font-size: 1rem
+}
+
+.hero-actions {
+  gap: .55rem;
+  margin-top: 1.3rem
+}
+
+.button {
+  min-height: 3rem;
+  padding: .65rem 1rem;
+  font-size: .88rem
+}
+
+.hero-visual {
+  min-height: 27rem;
+  margin: 2rem .6rem .8rem;
+  border-radius: 47% 48% 40% 47%/15% 20% 55% 56%
+}
+
+.hero-photo {
+  object-position: 50% 20%
+}
+
+.photo-caption {
+  right: .6rem;
+  bottom: 1rem;
+  left: .6rem;
+  width: max-content;
+  font-size: .66rem
+}
+
+.focus-row {
+  gap: .45rem .8rem;
+  padding-top: 1.5rem;
+  font-size: .68rem
+}
+
+.focus-label {
+  width: 100%;
+  font-size: .58rem
+}
+
+/* QUICK IMPACT SUMMARY
+   The dark row of training and skill statistics. */
+.impact-strip {
+  grid-template-columns: repeat(2,1fr);
+  gap: 0;
+  margin-top: -.2rem;
+  padding: 1.3rem .5rem;
+  border-radius: 1rem 1rem 0 0
+}
+
+.impact-item {
+  padding: .8rem .3rem
+}
+
+.impact-item:nth-child(3) {
+  border-left: 0
+}
+
+.impact-item:nth-child(n+3) {
+  border-top: 1px solid #fff3
+}
+
+.impact-item strong {
+  font-size: 1.5rem
+}
+
+.impact-item>span {
+  font-size: .7rem
+}
+
+/* TRAINING TOPICS
+   Intro copy and cards describing the subjects taught. */
+.training {
+  padding-top: 4.25rem;
+  padding-bottom: 4.5rem
+}
+
+.section-intro {
+  grid-template-columns: 1fr;
+  gap: 1rem
+}
+
+.section-kicker {
+  margin-bottom: .8rem;
+  font-size: .65rem
+}
+
+.section-intro h2,
+/* ABOUT SECTION
+   Trainer portrait, biography, and skills list. */
+.about h2 {
+  font-size: clamp(2.5rem,10vw,4rem)
+}
+
+.intro-side {
+  align-items: flex-start
+}
+
+.intro-side p {
+  font-size: .98rem
+}
+
+.training-grid {
+  grid-template-columns: 1fr;
+  gap: .65rem;
+  margin-top: 1.8rem
+}
+
+.training-card {
+  min-height: 0;
+  padding: 1rem
+}
+
+.training-card h3 {
+  font-size: 1.2rem
+}
+
+.training-card p:last-child {
+  font-size: .87rem
+}
+
+/* ABOUT SECTION
+   Trainer portrait, biography, and skills list. */
+.about {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding-bottom: 4.5rem
+}
+
+.about-photo-wrap {
+  min-height: 28rem;
+  border-radius: 1.25rem
+}
+
+.about-copy {
+  padding: .5rem 0
+}
+
+.about-lead {
+  font-size: 1rem
+}
+
+.about-list {
+  margin: 1.3rem 0;
+  padding: 1.1rem 0
+}
+
+/* CONTACT FOOTER
+   Closing invitation and contact links. */
+.site-footer {
+  border-radius: 1rem 1rem 0 0
+}
+
+.footer-content {
+  width: calc(100% - 2rem);
+  padding-top: 3.5rem
+}
+
+/* CONTACT FOOTER
+   Closing invitation and contact links. */
+.site-footer h2 {
+  font-size: clamp(2.7rem,11vw,4.6rem)
+}
+
+/* CONTACT FOOTER
+   Closing invitation and contact links. */
+.site-footer p:not(.footer-kicker) {
+  font-size: 1rem
+}
+
+.footer-actions {
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 22rem;
+  margin-inline: auto
+}
+
+.footer-bottom {
+  flex-direction: column;
+  align-items: center;
+  gap: .65rem;
+  margin-top: 3.5rem;
+  text-align: center
+}
+
+.footer-bottom span:last-child {
+  text-align: center
+}
+
+
+}
+
+/* ACCESSIBILITY
+   Minimize animation for visitors who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+  scroll-behavior: auto!important;
+  animation-duration: .01ms!important;
+  animation-iteration-count: 1!important;
+  transition-duration: .01ms!important
+}
+
+
+}
+
+/* TRAINING PHOTO GALLERY
+   Controls the large rotating image card and its caption. */
+.training-gallery {
+  padding: 1rem 0 clamp(5rem, 8vw, 7rem);
+}
+
+.gallery-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-heading h2 {
+  margin: 0;
+  font-size: clamp(2.6rem, 5.5vw, 5rem);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.07em;
+}
+
+.gallery-heading > p {
+  max-width: 28rem;
+  margin: 0 0 .35rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.gallery-card {
+  position: relative;
+  min-height: clamp(25rem, 55vw, 43rem);
+  overflow: hidden;
+  border-radius: 2rem;
+  background: #423b34;
+  color: var(--surface);
+}
+
+.gallery-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .45s var(--ease), transform 7s linear;
+}
+
+.gallery-card.is-changing .gallery-image {
+  opacity: .35;
+  transform: scale(1.025);
+}
+
+.gallery-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #161616b8 0%, #1616165c 45%, transparent 100%), linear-gradient(0deg, #1616168c, transparent 45%);
+}
+
+.gallery-caption {
+  position: absolute;
+  left: clamp(1.5rem, 5vw, 4rem);
+  bottom: clamp(5.5rem, 10vw, 7rem);
+  max-width: 33rem;
+}
+
+.gallery-tag {
+  color: #f0c9a9;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.gallery-caption h3 {
+  margin: .8rem 0 .45rem;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  letter-spacing: -.07em;
+  line-height: 1;
+}
+
+.gallery-caption p {
+  max-width: 30rem;
+  margin: 0;
+  color: #fffdf9dc;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.gallery-controls {
+  position: absolute;
+  right: clamp(1.25rem, 4vw, 3rem);
+  bottom: clamp(1.25rem, 4vw, 3rem);
+  left: clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gallery-count {
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.gallery-count span {
+  color: #fffdf98c;
+  font-weight: 400;
+}
+
+.gallery-buttons {
+  display: flex;
+  gap: .6rem;
+}
+
+.gallery-button {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid #fff9;
+  border-radius: 50%;
+  background: #16161638;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.gallery-button:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  color: var(--ink);
+}
+
+.gallery-note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.6;
+}
+
+.gallery-note code {
+  padding: .1rem .3rem;
+  border-radius: .25rem;
+  background: #1616160a;
+  font-size: .78rem;
+}
+
+/* PHONE GALLERY
+   Keep the photo card and its controls comfortable to use on small screens. */
+@media (max-width: 680px) {
+  .training-gallery {
+    padding-top: 0;
+    padding-bottom: 4.5rem;
+  }
+
+  .gallery-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .7rem;
+  }
+
+  .gallery-heading h2 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .gallery-heading > p {
+    font-size: .98rem;
+  }
+
+  .gallery-card {
+    min-height: 31rem;
+    border-radius: 1.25rem;
+  }
+
+  .gallery-caption {
+    right: 1.25rem;
+    bottom: 6rem;
+    left: 1.25rem;
+  }
+
+  .gallery-caption h3 {
+    font-size: 2.7rem;
+  }
+
+  .gallery-controls {
+    right: 1.25rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
+  }
+
+  .gallery-button {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}
+
+/* REDUCED MOTION
+   Avoid animated image transitions for visitors who request less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-image {
+    transition: none !important;
+    transform: none !important;
+  }
+}
